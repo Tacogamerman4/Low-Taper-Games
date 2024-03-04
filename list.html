@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .background {
+	<style>
+		body {
+			overflow: hidden;
+		}
+	</style>
+	<style>
+        .update-log {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            animation: backgroundAnimation 10s linear infinite;
-            background: linear-gradient(90deg, rgb(6, 40, 84), rgb(0, 0, 0));
-        }
-
-        @keyframes backgroundAnimation {
-            0% {
-                background-position: 100% 0;
-            }
-            100% {
-                background-position: -100% 0;
-            }
+            background-color: #000000;
+            padding: 10px;
+            border-bottom-right-radius: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            z-index: 1000; /* Ensure it's above other content */
         }
     </style>
+</head>
+<body>
+
+<div class="update-log">
+    <p>Update Log:</p>
+    <ul>
+        <li>New Animated Background</li>
+        <li>Added "Ascii Space"</li>
+        <li>Slight Menu Redesign</li>
+    </ul>
+</div>
+	<style>
+      body {
+        background: linear-gradient(90deg, #000427, #01115a, #010d4d);
+        background-size: 300% 300%;
+        animation: gradientAnimation 10s ease infinite;
+      }
+    
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+	</style>
     <style>
         body {
 	color: white;
@@ -60,7 +81,7 @@
 	outline: none;
 	width: 374px;
 	font-size: 16px;
-	border: 1px solid rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(0, 6, 96, 0.3);
 	padding: 12px;
 	margin-bottom: 10px;
 	transition: 0.2s ease;
@@ -156,4 +177,4 @@
 <a href="./gfiles/html5/towermaster/">Towermaster</a>
 <a href="./gfiles/html5/trimps/">Trimps</a>
 <a href="./gfiles/html5/asciispace/">ASCII Space</a>
-<a href="./gfiles/html5/asteroids/">Asteroids</a>
+<a href="./gfiles/html5/asteroids/">Asteroids</a>	
