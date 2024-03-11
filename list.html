@@ -1,232 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <style>
-        @media screen and (min-width: 768px) {
-            body {
-                zoom: 110%;
-            }
-        }
-     </style>
-	<style>
-    body {
-        overflow: hidden;
-    }
-</style>
-	<style>
-        .update-log {
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #000000;
-            padding: 10px;
-            border-bottom-right-radius: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            z-index: 1000; /* Ensure it's above other content */
-        }
-    </style>
-</head>
-<body>
-
-<div class="update-log">
-    <p>Update Log:</p>
-    <ul>
-        <li>New Animated Background</li>
-        <li>Added "Ascii Space"</li>
-        <li>Slight Menu Redesign</li>
-        <li>Dorian's News:</li>
-<a href="/news" style="color: white; text-decoration: underline;">Click Here!</a>
-    </ul>
-</div>
-	<style>
+    <style>
       body {
-        margin: 0;
-        overflow: hidden;
-        font-family: Arial, sans-serif;
+        background: linear-gradient(90deg, #ffffff, #eafff4, #d6daff);
+        background-size: 300% 300%;
+        animation: gradientAnimation 10s ease infinite;
       }
     
-      #background {
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background: radial-gradient(circle, rgb(0, 0, 0), rgb(1, 44, 42));
-      }
-    
-      .star {
-        position: absolute;
-        background: rgb(57, 255, 215);
-        border-radius: 50%;
-        transform: scale(0);
-        animation: sparkle 2s infinite, drift linear infinite;
-      }
-    
-      @keyframes sparkle {
-        0%, 100% {
-          opacity: 0;
-          transform: scale(0);
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
         }
         50% {
-          opacity: 1;
-          transform: scale(1);
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
         }
       }
-    
-      @keyframes drift {
-        0%, 100% {
-          transform: translate(0, 0);
-        }
-        50% {
-          transform: translate(50px, -50px);
-        }
-      }
-    </style>
-    </head>
-      <div id="background">
-        <!-- Generating stars -->
-        <script>
-          const numStars = 300;
-          const background = document.getElementById('background');
-    
-          for (let i = 0; i < numStars; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.width = `${Math.random() * 3}px`;
-            star.style.height = star.style.width;
-            star.style.left = `${Math.random() * 100}vw`;
-            star.style.top = `${Math.random() * 100}vh`;
-    
-            background.appendChild(star);
-          }
-        </script>
-      </div>
+	</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Log</title>
     <style>
         body {
-	color: white;
-	font-family: sans-serif;
-}
-
-.container {
-	padding: 20px;
-}
-
-.box {
-	margin: auto;
-	background-color: rgb(0, 0, 0);
-	padding: 10px;
-	width: 400px;
-    border-width: 9px;
-	border-radius: 2%;
-}
-
-#glist {
-	overflow-x: hidden;
-	overflow-y: scroll;
-	width: 400px;
-	height: 520px;
-	padding: 0;
-	text-align: center;
-}
-
-#gsearchbar {
-	outline: none;
-	width: 374px;
-	font-size: 16px;
-	border: 1px solid rgba(0, 6, 96, 0.3);
-	padding: 12px;
-	margin-bottom: 10px;
-	transition: 0.2s ease;
-}
-
-#gsearchbar:focus {
-	background-color: rgb(168, 255, 248) 74, 74);
-	box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.4);
-}
-
-#glist h2 {
-	display: block;
-	color: white;
-	font: 18px;
-	border: 1px solid #060606;
-	margin: -1px 0 0 0;
-	background-color: #282828;
-	padding: 12px;
-	font-weight: bold;
-	user-select: none;
-}
-
-#glist a {
-	display: block;
-	text-decoration: inherit;
-	color: black;
-	font-size: 18px;
-	border: 1px solid #dddddd;
-	margin-top: -1px;
-	background-color: #f6f6f6;
-	padding: 12px;
-	transition: 0.2s ease;
-}
-
-#glist a:hover {
-	background-color: #eeeeee;
-	text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-}
- </style>
+            font-family: 'Courier', Courier, monospace;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .update {
+            margin-bottom: 20px;
+        }
+        .date {
+            font-weight: bold;
+        }
     </style>
-    <div class="background"></div>
-<title>Dorian's Games!</title>
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-<div class="box">
-<input type="text" id="gsearchbar" onkeyup="document.querySelectorAll('#glist>a').forEach(l=>l.style.display=l.textContent.toUpperCase().includes(this.value.toUpperCase().replace(/ /g,''))?'block':'none')" autocomplete="off" spellcheck="false" placeholder="Search" />
-<div id="glist">
-<h2>Dorian's Games!</h2>
-<a href="./gfiles/html5/cookieclicker/">Cookie Clicker</a>
-<a href="./gfiles/html5/flappybird/">Flappy Bird</a>
-<a href="./gfiles/html5/geometrydash/">Geometry Dash</a>
-<a href="./gfiles/html5/2048/">2048</a>
-<a href="./gfiles/html5/tetris/">Tetris</a>
-<a href="./gfiles/html5/minecraft/">Old Minecraft</a>
-<a href="./gfiles/html5/chromedino/">Chrome Dino</a>
-<a href="./gfiles/html5/snake/">Google Snake</a>
-<a href="./gfiles/html5/chess/">Ai Chess</a>
-<a href="./gfiles/html5/pacman/">Pac-Man</a>
-<a href="./gfiles/html5/particleclicker/">Particle Clicker</a>
-<a href="./gfiles/html5/chromaincident/">Chroma Incident</a>
-<a href="./gfiles/html5/radiusraid/">Radius Raid</a>
-<a href="./gfiles/html5/hextris/">Hextris</a>
-<a href="./gfiles/html5/q1k3/">Q1K3 (Fps)</a>
-<a href="./gfiles/html5/underrun/">Underrun</a>
-<a href="./gfiles/html5/astray/">Astray</a>
-<a href="./gfiles/html5/bounceback/">Bounce Back</a>
-<a href="./gfiles/html5/captaincallisto/">Captain Callisto</a>
-<a href="./gfiles/html5/xx142-b2exe/">xx142-b2.exe</a>
-<a href="./gfiles/html5/backcountry/">Backcountry</a>
-<a href="./gfiles/html5/blackholesquare/">Black Hole Square</a>
-<a href="./gfiles/html5/bounceback/">Bounce Back</a>
-<a href="./gfiles/html5/breaklock/">Breaklock</a>
-<a href="./gfiles/html5/breakout/">Breakout</a>
-<a href="./gfiles/html5/connect3/">Connect 3</a>
-<a href="./gfiles/html5/edgenotfound/">Edge not Found</a>
-<a href="./gfiles/html5/evilglitch/">Evil Glitch</a>
-<a href="./gfiles/html5/factoryballsforever/">Factory Balls Forever</a>
-<a href="./gfiles/html5/konnekt/">Konnekt</a>
-<a href="./gfiles/html5/ninjavsevilcorp/">Ninja vs Evilcorp</a>
-<a href="./gfiles/html5/packabunchas/">Packabunchas</a>
-<a href="./gfiles/html5/pushback/">Push Back</a>
-<a href="./gfiles/html5/racer/">Racer</a>
-<a href="./gfiles/html5/retrohaunt/">Retrohaunt</a>
-<a href="./gfiles/html5/roadblocks/">Road Blocks</a>
-<a href="./gfiles/html5/shuttledeck/">Shuttledeck</a>
-<a href="./gfiles/html5/sleepingbeauty/">Sleeping Beauty</a>
-<a href="./gfiles/html5/spacecompany/">Space Company</a>
-<a href="./gfiles/html5/spacegarden/">Space Garden</a>
-<a href="./gfiles/html5/spacehuggers/">Space Huggers</a>
-<a href="./gfiles/html5/themazeofspacegoblins/">The Maze of Space Goblins</a>
-<a href="./gfiles/html5/towermaster/">Towermaster</a>
-<a href="./gfiles/html5/trimps/">Trimps</a>
-<a href="./gfiles/html5/asciispace/">ASCII Space</a>
-<a href="./gfiles/html5/asteroids/">Asteroids</a>	
+    <h1>News, Requests, And Yapping</h1>
+
+ <div class="update">
+        <p class="date">March 8, 2024</p>
+        <p>Damen beat me up for no reason</p>
+    </div>
+
+
+    <div class="update">
+        <p class="date">March 6, 2024</p>
+        <p>Please tell Jack Barlow that he is disowned by Dorian if you walk past him.</p>
+    </div>
+
+    <div class="update">
+        <p class="date">March 4, 2024</p>
+        <p>Email hcps-welchdm@henricostudents.org to request games</p>
+    </div>
+
+    <div class="update">
+        <p class="date">March 2, 2024</p>
+        <p>I might move website links again soon</p>
+    </div>
+
+</body>
+</html>
+<style>
+    .button {
+      display: inline-block;
+      background-color: #ffffff; /* Green */
+      border: 5px;
+      color: rgb(0, 0, 0);
+      padding: 20px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 50%; 
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15); 
+      font-family: 'Courier New', Courier, monospace;
+    }
+    
+    .button:hover {
+      background-color: #ffffff;
+    }
+    
+    </style>
+            <button class="button" onclick="window.location.href = '/list';">Back to Main Menu</button>
