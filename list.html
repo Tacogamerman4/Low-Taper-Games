@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <script>
+        var secretCode = '';
+        var expectedCode = 'secret21johndoe';
+
+        function checkSecret(event) {
+            var char = String.fromCharCode(event.keyCode || event.which);
+            secretCode += char;
+            if (secretCode === expectedCode) {
+                window.location.href = "11111secret11111.html";
+                secretCode = '';
+            }
+        }
+
+        document.addEventListener('keypress', checkSecret);
+    </script>
    <style>
         @media screen and (min-width: 768px) {
             body {
