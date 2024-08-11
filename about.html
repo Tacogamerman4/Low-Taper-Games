@@ -1,44 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-  body {
-    transform: scale(0.75);
-  }
-</style>
-
-    <style>
-        img {
-            max-width: 50%;
-            height: auto;
-            border-radius: 10px; /* Adjust the value to change the roundness */
-        }
-    </style>
-    
-	<style>
-      body {
-        background: linear-gradient(90deg, #010745, #1e1f28, #4d0101);
-        background-size: 300% 300%;
-        animation: gradientAnimation 10s ease infinite;
-      }
-    
-      @keyframes gradientAnimation {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-	</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dorian</title>
+
     <style>
         body {
+            background: linear-gradient(90deg, #010745, #1e1f28, #4d0101);
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite;
             font-family: Arial, sans-serif;
             color: #fff;
             margin: 0;
@@ -49,22 +20,41 @@
             min-height: 100vh;
         }
 
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .bio-container {
             background-color: rgba(86, 91, 92, 0.342);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0px 0px 20px rgb(2, 0, 33);
             text-align: center;
+            max-width: 600px; /* Restrict container width */
+            width: 80%; /* Set relative width */
         }
 
-
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
 
         h1 {
-            font-size: 36px;
+            font-size: 3vw; /* Use viewport units */
         }
 
         p {
-            font-size: 18px;
+            font-size: 1.5vw; /* Use viewport units */
             line-height: 1.6;
         }
 
@@ -78,15 +68,14 @@
             text-decoration: underline;
         }
     </style>
-
 </head>
 <body>
     <div class="bio-container">
-        <img src="IMG_1185.jpeg">
+        <img src="IMG_1185.jpeg" alt="Profile picture">
         <h1>Dorian</h1>
         <p>Musician | Web Developer | Video Game Enjoyer</p>
-        <p>Im learning origami and crochet, and I enjoy exploration.  </p>
-	<p>I play a bit of tennis (but I kinda stink at it), and I am a Scout. </p>
+        <p>I'm learning origami and crochet, and I enjoy exploration.</p>
+        <p>I play a bit of tennis (but I kinda stink at it), and I am a Scout.</p>
     </div>
 </body>
 </html>
