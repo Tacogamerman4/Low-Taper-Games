@@ -1,75 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-  body {
-    transform: scale(0.75);
-  }
-</style>
-
-    <style>
-        img {
-            max-width: 50%;
-            height: auto;
-            border-radius: 10px; /* Adjust the value to change the roundness */
-        }
-    </style>
-    
-	<style>
-      body {
-        background: linear-gradient(90deg, #010745, #1e1f28, #4d0101);
-        background-size: 300% 300%;
-        animation: gradientAnimation 10s ease infinite;
-      }
-    
-      @keyframes gradientAnimation {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-	</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dorian</title>
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
-            color: #fff;
+            font-family: 'Arial', sans-serif;
+            color: #333;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            background-color: #f4f4f4;
         }
 
         .bio-container {
-            background-color: rgba(86, 91, 92, 0.342);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 0px 20px rgb(2, 0, 33);
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
+            max-width: 500px;
+            width: 90%;
         }
 
-
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
 
         h1 {
-            font-size: 36px;
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 10px;
         }
 
         p {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #34495e;
+            margin-bottom: 20px;
         }
 
         a {
-            color: #fff;
+            color: #3498db;
             text-decoration: none;
             font-weight: bold;
         }
@@ -77,16 +57,40 @@
         a:hover {
             text-decoration: underline;
         }
-    </style>
 
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .bio-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="bio-container">
-        <img src="IMG_1185.jpeg">
+        <img src="IMG_1185.jpeg" alt="Dorian's Photo">
         <h1>Dorian</h1>
         <p>Musician | Web Developer | Video Game Enjoyer</p>
-        <p>Im learning origami and crochet, and I enjoy exploration.  </p>
-	<p>I play a bit of tennis (but I kinda stink at it), and I am a Scout. </p>
+        <p>I'm learning origami and crochet, and I enjoy exploration.</p>
+        <p>I play a bit of tennis (but I kinda stink at it), and I am a Scout.</p>
     </div>
 </body>
 </html>
