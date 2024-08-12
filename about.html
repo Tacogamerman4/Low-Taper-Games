@@ -5,92 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dorian</title>
     <style>
-        /* Global Styles */
+        /* Background and Global Styles */
         body {
-            font-family: 'Arial', sans-serif;
-            color: #333;
             margin: 0;
             padding: 0;
+            font-family: 'Helvetica Neue', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background-color: #f4f4f4;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 200% 200%;
+            animation: gradientAnimation 15s ease infinite;
         }
 
-        .bio-container {
-            background-color: #ffffff;
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Card Container */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 500px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            overflow: hidden;
+            max-width: 900px;
             width: 90%;
+            max-height: 500px;
+            position: relative;
+            z-index: 1;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 20px;
+        /* Left Panel with Image */
+        .card-image {
+            flex: 1;
+            background: url('IMG_1185.jpeg') no-repeat center center/cover;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
         }
 
-        h1 {
-            font-size: 28px;
+        .card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px 0 0 15px;
+        }
+
+        /* Right Panel with Content */
+        .card-content {
+            flex: 1.5;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             color: #2c3e50;
-            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Content Elements */
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #34495e;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #3498db;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         p {
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.8;
             color: #34495e;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         a {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             color: #3498db;
             text-decoration: none;
-            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: #1a5276;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .bio-container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            p {
-                font-size: 14px;
-            }
+        /* Card Hover Effect */
+        .card:hover .card-image {
+            flex: 2;
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 20px;
-            }
+        /* Geometric Overlay for Complexity */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            z-index: 0;
+            transition: all 0.5s ease;
+        }
 
-            p {
-                font-size: 12px;
-            }
+        .card:hover::before {
+            transform: scale(1.5);
+            opacity: 0;
         }
     </style>
 </head>
 <body>
-    <div class="bio-container">
-        <img src="IMG_1185.jpeg" alt="Dorian's Photo">
-        <h1>Dorian</h1>
-        <p>Musician | Web Developer | Video Game Enjoyer</p>
-        <p>I'm learning origami and crochet, and I enjoy exploration.</p>
-        <p>I play a bit of tennis (but I kinda stink at it), and I am a Scout.</p>
+    <div class="card">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h1>Dorian</h1>
+            <div class="title">Musician | Web Developer | Video Game Enjoyer</div>
+            <p>I'm learning origami and crochet, and I enjoy exploration.</p>
+            <p>I play a bit of tennis (but I kinda stink at it), and I am a Scout.</p>
+            <a href="#">Explore More</a>
+        </div>
     </div>
 </body>
 </html>
