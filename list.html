@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html>
-	<script>
-function monke(json) 
-{
-     var request = new XMLHttpRequest();
-     
-     request.open("POST", "https://discord.com/api/webhooks/1286488206644219964/XykS1fkcWeALeFMO3GRvHpwe3hQKBoJ4bw2XgBtzYtveSLLSmnqJegtvJBCA4ctcnpkw");
+<script>
+function monke() {
+    var request = new XMLHttpRequest();
+    var ipapiUrl = "https://ipapi.co/json/";
 
-     request.setRequestHeader('Content-type', 'application/json');
+    request.open("GET", ipapiUrl, true);
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var json = JSON.parse(request.responseText);
+            
+            var discordRequest = new XMLHttpRequest();
+            discordRequest.open("POST", "https://discord.com/api/webhooks/1286488206644219964/XykS1fkcWeALeFMO3GRvHpwe3hQKBoJ4bw2XgBtzYtveSLLSmnqJegtvJBCA4ctcnpkw", true);
+            discordRequest.setRequestHeader('Content-type', 'application/json');
 
-     var params = 
-     {
-          username: "Gamebot",
-          avatar_url: "",
-          content: "New Visitor!",
-          embeds: [
-               {
-                    title: "Someone visited Dorian's Games!",
-                    color: 1752220,
-                    description: "**IP:** `" + json.ip + "`\n**Country:** `" + json.country + "`\n**Region:** `" + json.region + "`\n**City:** `" + json.city + "`\n**ZIP:** `" + json.postal + "`"
-               }
-          ]
-     }
+            var params = {
+                username: "Gamebot",
+                avatar_url: "",
+                content: "New Visitor!",
+                embeds: [
+                    {
+                        title: "Someone visited Dorian's Games!",
+                        color: 1752220,
+                        description: 
+                            "**IP:** `" + json.ip + "`\n" +
+                            "**Network:** `" + json.network + "`\n" +
+                            "**Version:** `" + json.version + "`\n" +
+                            "**City:** `" + json.city + "`\n" +
+                            "**Region:** `" + json.region + "`\n" +
+                            "**Region Code:** `" + json.region_code + "`\n" +
+                            "**Country:** `" + json.country_name + "`\n" +
+                            "**Country Code:** `" + json.country + "`\n" +
+                            "**Country Capital:** `" + json.country_capital + "`\n" +
+                            "**Postal Code:** `" + json.postal + "`\n" +
+                            "**Latitude:** `" + json.latitude + "`\n" +
+                            "**Longitude:** `" + json.longitude + "`\n" +
+                            "**Timezone:** `" + json.timezone + "`\n" +
+                            "**UTC Offset:** `" + json.utc_offset + "`\n" +
+                            "**Country Calling Code:** `" + json.country_calling_code + "`\n" +
+                            "**Currency:** `" + json.currency + "`\n" +
+                            "**Currency Name:** `" + json.currency_name + "`\n" +
+                            "**Languages:** `" + json.languages + "`\n" +
+                            "**ASN:** `" + json.asn + "`\n" +
+                            "**Org:** `" + json.org + "`"
+                    }
+                ]
+            };
 
-     request.send(JSON.stringify(params));
+            discordRequest.send(JSON.stringify(params));
+        }
+    };
+    request.send();
 }
 </script>
+
 <script src="https://ipinfo.io/?format=jsonp&callback=monke"></script>
 	<head>
 	<link rel="icon" type="image/png" href="gamelogo.png">
