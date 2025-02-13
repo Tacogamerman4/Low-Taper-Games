@@ -5,125 +5,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
         body {
-    background: linear-gradient(90deg, #000428, #004e92, #000428);
-    background-size: 300% 300%;
-    animation: gradientAnimation 6s ease infinite alternate;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+            background: linear-gradient(135deg, #1e002a, #5f00b0, #ff0080, #1e002a);
+            background-size: 400% 400%;
+            animation: backgroundShift 10s ease infinite;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-.bottom-right-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #005bb5;
-    color: white;
-    border: 5px solid #000428;
-    padding: 18px 30px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
 
-.bottom-right-button:hover {
-    background-color: #003f7f;
-    transform: scale(1.07);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 3px solid #ff0080;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(255, 0, 128, 0.8);
+            backdrop-filter: blur(10px);
+        }
 
-.update-log {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #ffeb3b;
-    padding: 15px;
-    border-bottom-right-radius: 10px;
-    font-size: 14px;
-    z-index: 1000;
-    color: #000428;
-    font-weight: bold;
-    border-bottom: 3px solid #000428;
-}
+        .bottom-right-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff0080, #5f00b0);
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 128, 0.7);
+        }
 
-.box {
-    margin: auto;
-    background-color: white;
-    padding: 30px;
-    max-width: 450px;
-    width: 90%;
-    border: 6px solid #004e92;
-    border-radius: 10px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
-    color: #000428;
-}
+        .bottom-right-button:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0px 0px 25px rgba(255, 0, 128, 1);
+        }
 
-#gsearchbar {
-    outline: none;
-    width: 100%;
-    font-size: 16px;
-    border: 3px solid #004e92;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: #f8fcff;
-    text-transform: uppercase;
-}
+        .update-log {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 0, 128, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0px 0px 10px rgba(255, 0, 128, 0.7);
+            animation: pulse 2s infinite alternate;
+        }
 
-#gsearchbar:focus {
-    background-color: #e3f2fd;
-    border-color: #003366;
-    box-shadow: 0 0 10px rgba(0, 77, 146, 0.5);
-}
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1); }
+        }
 
-#glist {
-    border: 5px solid #004e92;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.95);
-}
+        #gsearchbar {
+            outline: none;
+            width: 100%;
+            font-size: 18px;
+            border: 3px solid #ff0080;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-transform: uppercase;
+        }
 
-#glist h2 {
-    color: #004e92;
-    background-color: #ffffff;
-    padding: 12px;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
+        #gsearchbar:focus {
+            background-color: rgba(255, 255, 255, 0.4);
+            border-color: #5f00b0;
+            box-shadow: 0px 0px 15px rgba(255, 0, 128, 0.8);
+        }
 
-#glist a {
-    display: block;
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    border: 2px solid #004e92;
-    margin-top: -1px;
-    background-color: #ffffff;
-    padding: 18px;
-    transition: all 0.3s ease-in-out;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+        #glist {
+            border: 5px solid #ff0080;
+            padding: 15px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 0px 15px rgba(255, 0, 128, 0.8);
+        }
 
-#glist a:hover {
-    background-color: #d6e5ff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+        #glist h2 {
+            color: #ff0080;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
 
+        #glist a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            transition: all 0.3s ease-in-out;
+            background: linear-gradient(45deg, #5f00b0, #ff0080);
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(255, 0, 128, 0.7);
+        }
+
+        #glist a:hover {
+            transform: scale(1.1) rotate(-3deg);
+            box-shadow: 0px 0px 20px rgba(255, 0, 128, 1);
+        }
     </style>
 </head>
 <body>
@@ -131,52 +144,14 @@
     <div class="update-log">Update Log: New Features Added!</div>
     <div class="container">
         <div class="box">
-            <input type="text" id="gsearchbar" onkeyup="document.querySelectorAll('#glist>a').forEach(l=>l.style.display=l.textContent.toUpperCase().includes(this.value.toUpperCase().replace(/ /g,''))?'block':'none')" autocomplete="off" spellcheck="false" placeholder="Search" />
+            <input type="text" id="gsearchbar" placeholder="Search" />
             <div id="glist">
                 <h2>Low Taper Games</h2>
-<a href="./gfiles/html5/cookieclicker/">Cookie Clicker</a>
-<a href="./gfiles/html5/flappybird/">Flappy Bird</a>
-<a href="./eagle">Minecraft 1.9</a>
-<a href="./Multiplayer/">Minecraft With Servers</a>
-<a href="./gfiles/html5/minecraft/">Very Old Minecraft</a>
-<a href="./gfiles/html5/geometrydash/">Geometry Dash</a>
-<a href="./gfiles/html5/q1k3/">Q1K3 (Fps)</a>
-<a href="./gfiles/html5/2048/">2048</a>
-<a href="./gfiles/html5/retrohaunt/">Retrohaunt</a>
-<a href="./gfiles/html5/tetris/">Tetris</a>
-<a href="./gfiles/html5/chromedino/">Chrome Dino</a>
-<a href="./gfiles/html5/snake/">Google Snake</a>
-<a href="./gfiles/html5/chess/">Chess Vs Robot</a>
-<a href="./gfiles/html5/pacman/">Pac-Man</a>
-<a href="./gfiles/html5/particleclicker/">Particle Clicker</a>
-<a href="./gfiles/html5/chromaincident/">Chroma Incident</a>
-<a href="./gfiles/html5/radiusraid/">Radius Raid</a>
-<a href="./gfiles/html5/hextris/">Hextris</a>
-<a href="./gfiles/html5/underrun/">Underrun</a>
-<a href="./gfiles/html5/astray/">Astray</a>
-<a href="./gfiles/html5/bounceback/">Bounce Back</a>
-<a href="./gfiles/html5/captaincallisto/">Captain Callisto</a>
-<a href="./gfiles/html5/xx142-b2exe/">xx142-b2.exe</a>
-<a href="./gfiles/html5/backcountry/">Backcountry</a>
-<a href="./gfiles/html5/blackholesquare/">Black Hole Square</a>
-<a href="./gfiles/html5/bounceback/">Bounce Back</a>
-<a href="./gfiles/html5/breaklock/">Breaklock</a>
-<a href="./gfiles/html5/breakout/">Breakout</a>
-<a href="./gfiles/html5/connect3/">Connect 3</a>
-<a href="./gfiles/html5/edgenotfound/">Edge not Found</a>
-<a href="./gfiles/html5/evilglitch/">Evil Glitch</a>
-<a href="./gfiles/html5/factoryballsforever/">Factory Balls Forever</a>
-<a href="./gfiles/html5/konnekt/">Konnekt</a>
-<a href="./gfiles/html5/ninjavsevilcorp/">Ninja vs Evilcorp</a>
-<a href="./gfiles/html5/trimps/">Trimps</a>
-<a href="./gfiles/html5/packabunchas/">Packabunchas</a>
-<a href="./gfiles/html5/pushback/">Push Back</a>
-<a href="./gfiles/html5/roadblocks/">Road Blocks</a>
-<a href="./gfiles/html5/sleepingbeauty/">Sleeping Beauty</a>
-<a href="./gfiles/html5/spacecompany/">Space Company</a>
-<a href="./gfiles/html5/spacegarden/">Space Garden</a>
-<a href="./gfiles/html5/spacehuggers/">Space Huggers</a>
-<a href="./gfiles/html5/themazeofspacegoblins/">The Maze of Space Goblins</a>
-<a href="./gfiles/html5/towermaster/">Towermaster</a>
-<a href="./gfiles/html5/asciispace/">ASCII Space</a>
-<a href="./gfiles/html5/asteroids/">Asteroids</a>	
+                <a href="#">Game 1</a>
+                <a href="#">Game 2</a>
+                <a href="#">Game 3</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
