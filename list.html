@@ -1,205 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="icon" type="image/png" href="gamelogo.png">
+    <link rel="icon" type="image/png" href="gamelogo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        body {
+            background: linear-gradient(90deg, #000428, #004e92, #000428);
+            background-size: 300% 300%;
+            animation: gradientAnimation 5s ease infinite;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
         .bottom-right-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: black;
+            background-color: #005bb5;
             color: white;
-            border: 2px solid grey;
-            padding: 10px 20px;
-            border-radius: 5px;
+            border: 5px solid #000428;
+            padding: 20px 35px;
+            border-radius: 12px;
             cursor: pointer;
             font-size: 16px;
+            margin: 10px;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out;
         }
         .bottom-right-button:hover {
-            background-color: grey;
+            background-color: #003f7f;
+            transform: scale(1.05);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+        
+        .update-log {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ffeb3b;
+            padding: 15px;
+            border-bottom-right-radius: 10px;
+            font-size: 14px;
+            z-index: 1000;
+            color: #000428;
+            font-weight: bold;
+            border-bottom: 3px solid #000428;
+        }
+        
+        .box {
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            max-width: 450px;
+            border: 6px solid #004e92;
+            border-radius: 10px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            color: #000428;
+        }
+        
+        #gsearchbar {
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            border: 3px solid #004e92;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: 0.3s ease;
+            background-color: #f8fcff;
+        }
+        
+        #gsearchbar:focus {
+            background-color: #e3f2fd;
+            border-color: #003366;
+            box-shadow: 0 0 10px rgba(0, 77, 146, 0.5);
+        }
+        
+        #glist {
+            border: 5px solid #004e92;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        #glist h2 {
+            color: #004e92;
+            background-color: #ffffff;
+            padding: 12px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        #glist a {
+            display: block;
+            text-decoration: inherit;
             color: black;
+            font-size: 18px;
+            border: 2px solid #004e92;
+            margin-top: -1px;
+            background-color: #ffffff;
+            padding: 18px;
+            transition: 0.3s ease;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        #glist a:hover {
+            background-color: #d6e5ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
     <button class="bottom-right-button" onclick="blank()">about:blank cloak</button>
-
-    <script>
-        function blank() {
-            (function () {
-                var url = document.URL;
-                var urlObj = new window.URL(window.location.href);
-                var win = window.open();
-                win.document.body.style.margin = "0";
-                win.document.body.style.height = "100vh";
-                var iframe = win.document.createElement("iframe");
-                iframe.style.border = "none";
-                iframe.style.width = "100%";
-                iframe.style.height = "100%";
-                iframe.style.margin = "0";
-                iframe.referrerPolicy = "no-referrer";
-                iframe.allow = "fullscreen";
-                iframe.src = url.toString();
-                win.document.body.appendChild(iframe);
-                var script = win.document.createElement("script");
-                script.src = "";
-                win.document.body.appendChild(script);
-            })();
-        }
-    </script>
-
-<head>
-<link rel="shortcut icon" type="image/png" href="/game.png"/>
- <script>
-        var secretCode = '';
-        var expectedCode = 'deacon';
-
-        function checkSecret(event) {
-            var char = String.fromCharCode(event.keyCode || event.which);
-            secretCode += char;
-            if (secretCode === expectedCode) {
-                window.location.href = "11111secret11111.html";
-                secretCode = '';
-            }
-        }
-
-        document.addEventListener('keypress', checkSecret);
-    </script>
-   <style>
-        @media screen and (min-width: 768px) {
-            body {
-                zoom: 110%;
-            }
-        }
-     </style>
-	<style>
-    body {
-        overflow: hidden;
-    }
-</style>
-	<style>
-        .update-log {
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #000000;
-            padding: 10px;
-            border-bottom-right-radius: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            z-index: 1000;
-        }
-    </style>
-</head>
-<body>
-
-
-	<style>
-      body {
-        background: linear-gradient(90deg, #25563b, #16251c, #262626);
-        background-size: 300% 300%;
-        animation: gradientAnimation 5s ease infinite;
-      }
-    
-      @keyframes gradientAnimation {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-	</style>
-    <style>
-        body {
-	color: white;
-	font-family: sans-serif;
-}
-
-.container {
-	padding: 20px;
-}
-
-.box {
-	margin: auto;
-	background-color: rgb(0, 0, 0);
-	padding: 10px;
-	width: 400px;
-    border-width: 9px;
-	border-radius: 2%;
-}
-
-#glist {
-	overflow-x: hidden;
-	overflow-y: scroll;
-	width: 400px;
-	height: 520px;
-	padding: 0;
-	text-align: center;
-}
-
-#gsearchbar {
-	outline: none;
-	width: 374px;
-	font-size: 16px;
-	border: 1px solid rgba(0, 6, 96, 0.3);
-	padding: 12px;
-	margin-bottom: 10px;
-	transition: 0.2s ease;
-}
-
-#gsearchbar:focus {
-	background-color: rgb(168, 255, 248) 74, 74);
-	box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.4);
-}
-
-#glist h2 {
-	display: block;
-	color: white;
-	font: 18px;
-	border: 1px solid #060606;
-	margin: -1px 0 0 0;
-	background-color: #282828;
-	padding: 12px;
-	font-weight: bold;
-	user-select: none;
-}
-
-#glist a {
-	display: block;
-	text-decoration: inherit;
-	color: black;
-	font-size: 18px;
-	border: 1px solid #dddddd;
-	margin-top: -1px;
-	background-color: #f6f6f6;
-	padding: 12px;
-	transition: 0.2s ease;
-}
-
-#glist a:hover {
-	background-color: #eeeeee;
-	text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-}
- </style>
-    </style>
-    <div class="background"></div>
-<title>Gogle driv</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<script>
-</script>
-<div class="container">
-<div class="box">
-<input type="text" id="gsearchbar" onkeyup="document.querySelectorAll('#glist>a').forEach(l=>l.style.display=l.textContent.toUpperCase().includes(this.value.toUpperCase().replace(/ /g,''))?'block':'none')" autocomplete="off" spellcheck="false" placeholder="Search" />
-<div id="glist">
-<h2>Low Taper Games</h2>
+    <div class="update-log">Update Log: New Features Added!</div>
+    <div class="container">
+        <div class="box">
+            <input type="text" id="gsearchbar" onkeyup="document.querySelectorAll('#glist>a').forEach(l=>l.style.display=l.textContent.toUpperCase().includes(this.value.toUpperCase().replace(/ /g,''))?'block':'none')" autocomplete="off" spellcheck="false" placeholder="Search" />
+            <div id="glist">
+                <h2>Low Taper Games</h2>
 <a href="./gfiles/html5/cookieclicker/">Cookie Clicker</a>
 <a href="./gfiles/html5/flappybird/">Flappy Bird</a>
 <a href="./eagle">Minecraft 1.9</a>
