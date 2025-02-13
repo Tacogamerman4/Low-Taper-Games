@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
         
         body {
-            background: linear-gradient(135deg, #1e002a, #5f00b0, #ff0080, #1e002a);
-            background-size: 400% 400%;
-            animation: backgroundShift 10s ease infinite;
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(120deg, #ffccff, #a3d8ff, #ffeb99);
+            background-size: 300% 300%;
+            animation: backgroundShift 8s ease infinite alternate;
+            color: #333;
+            font-family: 'Comic Neue', cursive;
             margin: 0;
             padding: 0;
             overflow: hidden;
@@ -33,35 +33,34 @@
         }
 
         .box {
-            background: rgba(255, 255, 255, 0.1);
-            border: 3px solid #ff0080;
+            background: rgba(255, 255, 255, 0.8);
+            border: 5px solid #ff66b2;
             padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0px 0px 20px rgba(255, 0, 128, 0.8);
-            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            box-shadow: 0px 0px 15px rgba(255, 102, 178, 0.5);
+            backdrop-filter: blur(8px);
         }
 
         .bottom-right-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: linear-gradient(45deg, #ff0080, #5f00b0);
+            background: linear-gradient(45deg, #ff66b2, #ffccff);
             color: white;
             border: none;
             padding: 18px 30px;
-            border-radius: 12px;
+            border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0px 0px 15px rgba(255, 0, 128, 0.7);
+            box-shadow: 0px 0px 12px rgba(255, 102, 178, 0.7);
         }
 
         .bottom-right-button:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0px 0px 25px rgba(255, 0, 128, 1);
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px rgba(255, 102, 178, 1);
         }
 
         .update-log {
@@ -69,51 +68,50 @@
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 0, 128, 0.8);
+            background: rgba(255, 102, 178, 0.8);
             padding: 10px 20px;
             border-radius: 10px;
             font-size: 14px;
             font-weight: bold;
             color: white;
-            box-shadow: 0px 0px 10px rgba(255, 0, 128, 0.7);
-            animation: pulse 2s infinite alternate;
+            box-shadow: 0px 0px 10px rgba(255, 102, 178, 0.7);
+            animation: pulse 1.5s infinite alternate;
         }
 
         @keyframes pulse {
             0% { transform: translateX(-50%) scale(1); }
-            100% { transform: translateX(-50%) scale(1.1); }
+            100% { transform: translateX(-50%) scale(1.05); }
         }
 
         #gsearchbar {
             outline: none;
             width: 100%;
             font-size: 18px;
-            border: 3px solid #ff0080;
+            border: 3px solid #ff66b2;
             padding: 12px;
             margin-bottom: 15px;
-            border-radius: 10px;
+            border-radius: 15px;
             transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-transform: uppercase;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
         }
 
         #gsearchbar:focus {
-            background-color: rgba(255, 255, 255, 0.4);
-            border-color: #5f00b0;
-            box-shadow: 0px 0px 15px rgba(255, 0, 128, 0.8);
+            background-color: rgba(255, 255, 255, 1);
+            border-color: #ff99cc;
+            box-shadow: 0px 0px 10px rgba(255, 102, 178, 0.7);
         }
 
         #glist {
-            border: 5px solid #ff0080;
+            border: 5px solid #ff66b2;
             padding: 15px;
-            border-radius: 15px;
-            background-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0px 0px 15px rgba(255, 0, 128, 0.8);
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 0px 12px rgba(255, 102, 178, 0.7);
         }
 
         #glist h2 {
-            color: #ff0080;
+            color: #ff66b2;
             font-weight: bold;
             margin-bottom: 15px;
         }
@@ -121,21 +119,21 @@
         #glist a {
             display: block;
             text-decoration: none;
-            color: white;
+            color: #333;
             font-size: 18px;
             padding: 12px;
-            border-radius: 5px;
+            border-radius: 10px;
             font-weight: bold;
             margin-bottom: 10px;
             transition: all 0.3s ease-in-out;
-            background: linear-gradient(45deg, #5f00b0, #ff0080);
+            background: linear-gradient(45deg, #ff99cc, #ffccff);
             text-align: center;
-            box-shadow: 0px 0px 10px rgba(255, 0, 128, 0.7);
+            box-shadow: 0px 0px 8px rgba(255, 102, 178, 0.5);
         }
 
         #glist a:hover {
-            transform: scale(1.1) rotate(-3deg);
-            box-shadow: 0px 0px 20px rgba(255, 0, 128, 1);
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(255, 102, 178, 1);
         }
     </style>
 </head>
