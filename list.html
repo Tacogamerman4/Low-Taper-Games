@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body class="bg-gray-900 text-white">
+    <div class="container mx-auto py-10 text-center">
+        <h1 class="text-4xl font-bold mb-6 animate-bounce">🎮 Game Hub 🎮</h1>
+        <p class="text-lg mb-8">A collection of fun browser games for you to enjoy!</p>
+        
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
             <a href="./gfiles/html5/flappybird/" class="game-link">Flappy Bird</a>
             <a href="./eagle" class="game-link">Minecraft 1.9</a>
@@ -58,48 +61,7 @@
 
     <style>
         .game-link {
-            @apply block bg-gray-800 p-4 rounded-lg shadow-md transition transform;
-            transition: all 0.3s ease-in-out;
-        }
-        .game-link:hover {
-            @apply bg-gray-700;
-            transform: scale(1.1) rotate(2deg);
-        }
-        .game-link:active {
-            transform: scale(0.95);
-        }
-    </style>
-
-    <script>
-        gsap.from(".game-link", {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            stagger: 0.1,
-            ease: "bounce.out"
-        });
-
-        document.querySelectorAll(".game-link").forEach(link => {
-            link.addEventListener("mouseenter", () => {
-                gsap.to(link, { scale: 1.2, duration: 0.2, ease: "power1.out" });
-            });
-            link.addEventListener("mouseleave", () => {
-                gsap.to(link, { scale: 1, duration: 0.2, ease: "power1.out" });
-            });
-            link.addEventListener("mousedown", () => {
-                gsap.to(link, { scale: 0.9, duration: 0.1, ease: "power1.out" });
-            });
-            link.addEventListener("mouseup", () => {
-                gsap.to(link, { scale: 1.1, duration: 0.1, ease: "power1.out" });
-            });
-        });
-    </script>
-
-
-
-    <style>
-        .game-link {
-            @apply block bg-gray-800 p-4 rounded-lg shadow-md hover:bg-gray-700 transition;
+            @apply block bg-gray-800 p-4 rounded-lg shadow-md transition transform hover:bg-purple-600 hover:scale-110 hover:shadow-xl hover:-translate-y-1;
         }
     </style>
 </body>
