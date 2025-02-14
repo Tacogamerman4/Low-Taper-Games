@@ -1,187 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="gamelogo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Low Taper Games</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
-            background-size: 200% 200%;
-            animation: backgroundShift 6s ease infinite alternate;
-            font-family: 'Poppins', sans-serif;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        @keyframes backgroundShift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-        
-        .container {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
-            text-align: center;
-            width: 350px;
-        }
-
-        .update-log {
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            color: white;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-            animation: pulse 1.5s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% { transform: translateX(-50%) scale(1); }
-            100% { transform: translateX(-50%) scale(1.05); }
-        }
-        
-        #gsearchbar {
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            border: none;
-            font-size: 16px;
-            outline: none;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-align: center;
-            transition: 0.3s ease;
-        }
-
-        #gsearchbar::placeholder {
-            color: #ddd;
-        }
-
-        #gsearchbar:focus {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        #glist {
-            margin-top: 20px;
-        }
-
-        #glist h2 {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        #glist a {
-            display: block;
-            background: rgba(255, 255, 255, 0.2);
-            margin: 8px 0;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        #glist a:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: scale(1.05);
-        }
-
-        .bottom-right-button {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .bottom-right-button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-    </style>
+    <title>Game Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="update-log">Update Log: UI Overhaul Completed!</div>
-    <div class="container">
-        <input type="text" id="gsearchbar" placeholder="Search Games">
-        <div id="glist">
-            <h2>Low Taper Games</h2>
-           <a href="./gfiles/html5/cookieclicker/">Cookie Clicker</a>
-<a href="./gfiles/html5/flappybird/">Flappy Bird</a>
-<a href="./eagle">Minecraft 1.9</a>
-<a href="./Multiplayer/">Minecraft With Servers</a>
-<a href="./gfiles/html5/minecraft/">Very Old Minecraft</a>
-<a href="./gfiles/html5/geometrydash/">Geometry Dash</a>
-<a href="./gfiles/html5/q1k3/">Q1K3 (Fps)</a>
-<a href="./gfiles/html5/2048/">2048</a>
-<a href="./gfiles/html5/retrohaunt/">Retrohaunt</a>
-<a href="./gfiles/html5/tetris/">Tetris</a>
-<a href="./gfiles/html5/chromedino/">Chrome Dino</a>
-<a href="./gfiles/html5/snake/">Google Snake</a>
-<a href="./gfiles/html5/chess/">Chess Vs Robot</a>
-<a href="./gfiles/html5/pacman/">Pac-Man</a>
-<a href="./gfiles/html5/particleclicker/">Particle Clicker</a>
-<a href="./gfiles/html5/chromaincident/">Chroma Incident</a>
-<a href="./gfiles/html5/radiusraid/">Radius Raid</a>
-<a href="./gfiles/html5/hextris/">Hextris</a>
-<a href="./gfiles/html5/underrun/">Underrun</a>
-<a href="./gfiles/html5/astray/">Astray</a>
-<a href="./gfiles/html5/bounceback/">Bounce Back</a>
-<a href="./gfiles/html5/captaincallisto/">Captain Callisto</a>
-<a href="./gfiles/html5/xx142-b2exe/">xx142-b2.exe</a>
-<a href="./gfiles/html5/backcountry/">Backcountry</a>
-<a href="./gfiles/html5/blackholesquare/">Black Hole Square</a>
-<a href="./gfiles/html5/bounceback/">Bounce Back</a>
-<a href="./gfiles/html5/breaklock/">Breaklock</a>
-<a href="./gfiles/html5/breakout/">Breakout</a>
-<a href="./gfiles/html5/connect3/">Connect 3</a>
-<a href="./gfiles/html5/edgenotfound/">Edge not Found</a>
-<a href="./gfiles/html5/evilglitch/">Evil Glitch</a>
-<a href="./gfiles/html5/factoryballsforever/">Factory Balls Forever</a>
-<a href="./gfiles/html5/konnekt/">Konnekt</a>
-<a href="./gfiles/html5/ninjavsevilcorp/">Ninja vs Evilcorp</a>
-<a href="./gfiles/html5/trimps/">Trimps</a>
-<a href="./gfiles/html5/packabunchas/">Packabunchas</a>
-<a href="./gfiles/html5/pushback/">Push Back</a>
-<a href="./gfiles/html5/roadblocks/">Road Blocks</a>
-<a href="./gfiles/html5/sleepingbeauty/">Sleeping Beauty</a>
-<a href="./gfiles/html5/spacecompany/">Space Company</a>
-<a href="./gfiles/html5/spacegarden/">Space Garden</a>
-<a href="./gfiles/html5/spacehuggers/">Space Huggers</a>
-<a href="./gfiles/html5/themazeofspacegoblins/">The Maze of Space Goblins</a>
-<a href="./gfiles/html5/towermaster/">Towermaster</a>
-<a href="./gfiles/html5/asciispace/">ASCII Space</a>
-<a href="./gfiles/html5/asteroids/">Asteroids</a>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto py-10 text-center">
+        <h1 class="text-4xl font-bold mb-6">🎮 Game Hub 🎮</h1>
+        <p class="text-lg mb-8">A collection of fun browser games for you to enjoy!</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
+            <a href="./gfiles/html5/flappybird/" class="game-link">Flappy Bird</a>
+            <a href="./eagle" class="game-link">Minecraft 1.9</a>
+            <a href="./Multiplayer/" class="game-link">Minecraft With Servers</a>
+            <a href="./gfiles/html5/minecraft/" class="game-link">Very Old Minecraft</a>
+            <a href="./gfiles/html5/geometrydash/" class="game-link">Geometry Dash</a>
+            <a href="./gfiles/html5/q1k3/" class="game-link">Q1K3 (Fps)</a>
+            <a href="./gfiles/html5/2048/" class="game-link">2048</a>
+            <a href="./gfiles/html5/retrohaunt/" class="game-link">Retrohaunt</a>
+            <a href="./gfiles/html5/tetris/" class="game-link">Tetris</a>
+            <a href="./gfiles/html5/chromedino/" class="game-link">Chrome Dino</a>
+            <a href="./gfiles/html5/snake/" class="game-link">Google Snake</a>
+            <a href="./gfiles/html5/chess/" class="game-link">Chess Vs Robot</a>
+            <a href="./gfiles/html5/pacman/" class="game-link">Pac-Man</a>
+            <a href="./gfiles/html5/particleclicker/" class="game-link">Particle Clicker</a>
+            <a href="./gfiles/html5/chromaincident/" class="game-link">Chroma Incident</a>
+            <a href="./gfiles/html5/radiusraid/" class="game-link">Radius Raid</a>
+            <a href="./gfiles/html5/hextris/" class="game-link">Hextris</a>
+            <a href="./gfiles/html5/underrun/" class="game-link">Underrun</a>
+            <a href="./gfiles/html5/astray/" class="game-link">Astray</a>
+            <a href="./gfiles/html5/bounceback/" class="game-link">Bounce Back</a>
+            <a href="./gfiles/html5/captaincallisto/" class="game-link">Captain Callisto</a>
+            <a href="./gfiles/html5/xx142-b2exe/" class="game-link">xx142-b2.exe</a>
+            <a href="./gfiles/html5/backcountry/" class="game-link">Backcountry</a>
+            <a href="./gfiles/html5/blackholesquare/" class="game-link">Black Hole Square</a>
+            <a href="./gfiles/html5/breaklock/" class="game-link">Breaklock</a>
+            <a href="./gfiles/html5/breakout/" class="game-link">Breakout</a>
+            <a href="./gfiles/html5/connect3/" class="game-link">Connect 3</a>
+            <a href="./gfiles/html5/edgenotfound/" class="game-link">Edge not Found</a>
+            <a href="./gfiles/html5/evilglitch/" class="game-link">Evil Glitch</a>
+            <a href="./gfiles/html5/factoryballsforever/" class="game-link">Factory Balls Forever</a>
+            <a href="./gfiles/html5/konnekt/" class="game-link">Konnekt</a>
+            <a href="./gfiles/html5/ninjavsevilcorp/" class="game-link">Ninja vs Evilcorp</a>
+            <a href="./gfiles/html5/trimps/" class="game-link">Trimps</a>
+            <a href="./gfiles/html5/packabunchas/" class="game-link">Packabunchas</a>
+            <a href="./gfiles/html5/pushback/" class="game-link">Push Back</a>
+            <a href="./gfiles/html5/roadblocks/" class="game-link">Road Blocks</a>
+            <a href="./gfiles/html5/sleepingbeauty/" class="game-link">Sleeping Beauty</a>
+            <a href="./gfiles/html5/spacecompany/" class="game-link">Space Company</a>
+            <a href="./gfiles/html5/spacegarden/" class="game-link">Space Garden</a>
+            <a href="./gfiles/html5/spacehuggers/" class="game-link">Space Huggers</a>
+            <a href="./gfiles/html5/themazeofspacegoblins/" class="game-link">The Maze of Space Goblins</a>
+            <a href="./gfiles/html5/towermaster/" class="game-link">Towermaster</a>
+            <a href="./gfiles/html5/asciispace/" class="game-link">ASCII Space</a>
+            <a href="./gfiles/html5/asteroids/" class="game-link">Asteroids</a>
         </div>
     </div>
-    <button class="bottom-right-button" onclick="blank()">Cloak Mode</button>
+
+    <style>
+        .game-link {
+            @apply block bg-gray-800 p-4 rounded-lg shadow-md hover:bg-gray-700 transition;
+        }
+    </style>
 </body>
 </html>
