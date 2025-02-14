@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .game-link {
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-link:hover {
+            background-color: #6b46c1; /* Tailwind's purple-600 */
+            transform: scale(1.1) rotate(3deg) translateY(-4px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-white">
     <div class="container mx-auto py-10 text-center">
@@ -12,57 +23,51 @@
         <p class="text-lg mb-8">Best games on the block</p>
         
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
-            <a href="./gfiles/html5/flappybird/" class="game-link">Flappy Bird</a>
-            <a href="./eagle" class="game-link">Minecraft 1.9</a>
-            <a href="./Multiplayer/" class="game-link">Minecraft With Servers</a>
-            <a href="./gfiles/html5/minecraft/" class="game-link">Very Old Minecraft</a>
-            <a href="./gfiles/html5/geometrydash/" class="game-link">Geometry Dash</a>
-            <a href="./gfiles/html5/q1k3/" class="game-link">Q1K3 (Fps)</a>
-            <a href="./gfiles/html5/2048/" class="game-link">2048</a>
-            <a href="./gfiles/html5/retrohaunt/" class="game-link">Retrohaunt</a>
-            <a href="./gfiles/html5/tetris/" class="game-link">Tetris</a>
-            <a href="./gfiles/html5/chromedino/" class="game-link">Chrome Dino</a>
-            <a href="./gfiles/html5/snake/" class="game-link">Google Snake</a>
-            <a href="./gfiles/html5/chess/" class="game-link">Chess Vs Robot</a>
-            <a href="./gfiles/html5/pacman/" class="game-link">Pac-Man</a>
-            <a href="./gfiles/html5/particleclicker/" class="game-link">Particle Clicker</a>
-            <a href="./gfiles/html5/chromaincident/" class="game-link">Chroma Incident</a>
-            <a href="./gfiles/html5/radiusraid/" class="game-link">Radius Raid</a>
-            <a href="./gfiles/html5/hextris/" class="game-link">Hextris</a>
-            <a href="./gfiles/html5/underrun/" class="game-link">Underrun</a>
-            <a href="./gfiles/html5/astray/" class="game-link">Astray</a>
-            <a href="./gfiles/html5/bounceback/" class="game-link">Bounce Back</a>
-            <a href="./gfiles/html5/captaincallisto/" class="game-link">Captain Callisto</a>
-            <a href="./gfiles/html5/xx142-b2exe/" class="game-link">xx142-b2.exe</a>
-            <a href="./gfiles/html5/backcountry/" class="game-link">Backcountry</a>
-            <a href="./gfiles/html5/blackholesquare/" class="game-link">Black Hole Square</a>
-            <a href="./gfiles/html5/breaklock/" class="game-link">Breaklock</a>
-            <a href="./gfiles/html5/breakout/" class="game-link">Breakout</a>
-            <a href="./gfiles/html5/connect3/" class="game-link">Connect 3</a>
-            <a href="./gfiles/html5/edgenotfound/" class="game-link">Edge not Found</a>
-            <a href="./gfiles/html5/evilglitch/" class="game-link">Evil Glitch</a>
-            <a href="./gfiles/html5/factoryballsforever/" class="game-link">Factory Balls Forever</a>
-            <a href="./gfiles/html5/konnekt/" class="game-link">Konnekt</a>
-            <a href="./gfiles/html5/ninjavsevilcorp/" class="game-link">Ninja vs Evilcorp</a>
-            <a href="./gfiles/html5/trimps/" class="game-link">Trimps</a>
-            <a href="./gfiles/html5/packabunchas/" class="game-link">Packabunchas</a>
-            <a href="./gfiles/html5/pushback/" class="game-link">Push Back</a>
-            <a href="./gfiles/html5/roadblocks/" class="game-link">Road Blocks</a>
-            <a href="./gfiles/html5/sleepingbeauty/" class="game-link">Sleeping Beauty</a>
-            <a href="./gfiles/html5/spacecompany/" class="game-link">Space Company</a>
-            <a href="./gfiles/html5/spacegarden/" class="game-link">Space Garden</a>
-            <a href="./gfiles/html5/spacehuggers/" class="game-link">Space Huggers</a>
-            <a href="./gfiles/html5/themazeofspacegoblins/" class="game-link">The Maze of Space Goblins</a>
-            <a href="./gfiles/html5/towermaster/" class="game-link">Towermaster</a>
-            <a href="./gfiles/html5/asciispace/" class="game-link">ASCII Space</a>
-            <a href="./gfiles/html5/asteroids/" class="game-link">Asteroids</a>
+            <a href="./gfiles/html5/flappybird/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Flappy Bird</a>
+            <a href="./eagle" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Minecraft 1.9</a>
+            <a href="./Multiplayer/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Minecraft With Servers</a>
+            <a href="./gfiles/html5/minecraft/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Very Old Minecraft</a>
+            <a href="./gfiles/html5/geometrydash/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Geometry Dash</a>
+            <a href="./gfiles/html5/q1k3/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Q1K3 (Fps)</a>
+            <a href="./gfiles/html5/2048/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">2048</a>
+            <a href="./gfiles/html5/retrohaunt/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Retrohaunt</a>
+            <a href="./gfiles/html5/tetris/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Tetris</a>
+            <a href="./gfiles/html5/chromedino/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Chrome Dino</a>
+            <a href="./gfiles/html5/snake/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Google Snake</a>
+            <a href="./gfiles/html5/chess/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Chess Vs Robot</a>
+            <a href="./gfiles/html5/pacman/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Pac-Man</a>
+            <a href="./gfiles/html5/particleclicker/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Particle Clicker</a>
+            <a href="./gfiles/html5/chromaincident/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Chroma Incident</a>
+            <a href="./gfiles/html5/radiusraid/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Radius Raid</a>
+            <a href="./gfiles/html5/hextris/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Hextris</a>
+            <a href="./gfiles/html5/underrun/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Underrun</a>
+            <a href="./gfiles/html5/astray/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Astray</a>
+            <a href="./gfiles/html5/bounceback/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Bounce Back</a>
+            <a href="./gfiles/html5/captaincallisto/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Captain Callisto</a>
+            <a href="./gfiles/html5/xx142-b2exe/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">xx142-b2.exe</a>
+            <a href="./gfiles/html5/backcountry/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Backcountry</a>
+            <a href="./gfiles/html5/blackholesquare/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Black Hole Square</a>
+            <a href="./gfiles/html5/breaklock/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Breaklock</a>
+            <a href="./gfiles/html5/breakout/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Breakout</a>
+            <a href="./gfiles/html5/connect3/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Connect 3</a>
+            <a href="./gfiles/html5/edgenotfound/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Edge not Found</a>
+            <a href="./gfiles/html5/evilglitch/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Evil Glitch</a>
+            <a href="./gfiles/html5/factoryballsforever/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Factory Balls Forever</a>
+            <a href="./gfiles/html5/konnekt/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Konnekt</a>
+            <a href="./gfiles/html5/ninjavsevilcorp/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Ninja vs Evilcorp</a>
+            <a href="./gfiles/html5/trimps/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Trimps</a>
+            <a href="./gfiles/html5/packabunchas/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Packabunchas</a>
+            <a href="./gfiles/html5/pushback/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Push Back</a>
+            <a href="./gfiles/html5/roadblocks/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Road Blocks</a>
+            <a href="./gfiles/html5/sleepingbeauty/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Sleeping Beauty</a>
+            <a href="./gfiles/html5/spacecompany/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Space Company</a>
+            <a href="./gfiles/html5/spacegarden/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Space Garden</a>
+            <a href="./gfiles/html5/spacehuggers/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Space Huggers</a>
+            <a href="./gfiles/html5/themazeofspacegoblins/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">The Maze of Space Goblins</a>
+            <a href="./gfiles/html5/towermaster/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Towermaster</a>
+            <a href="./gfiles/html5/asciispace/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">ASCII Space</a>
+            <a href="./gfiles/html5/asteroids/" class="game-link p-4 bg-gray-800 rounded-lg shadow-md">Asteroids</a>
         </div>
     </div>
-
-    <style>
-        .game-link {
-            @apply block bg-gray-800 p-4 rounded-lg shadow-md transition transform hover:bg-purple-600 hover:scale-110 hover:shadow-xl hover:-translate-y-1;
-        }
-    </style>
 </body>
 </html>
