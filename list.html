@@ -1,80 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <link rel="icon" type="image/png" href="gamelogo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Low Taper Games</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         
-        body {
-            background: linear-gradient(120deg, #ffccff, #a3d8ff, #ffeb99);
-            background-size: 300% 300%;
-            animation: backgroundShift 8s ease infinite alternate;
-            color: #333;
-            font-family: 'Comic Neue', cursive;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+            background-size: 200% 200%;
+            animation: backgroundShift 6s ease infinite alternate;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             overflow: hidden;
         }
 
         @keyframes backgroundShift {
             0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
-
+        
         .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .box {
-            background: rgba(255, 255, 255, 0.8);
-            border: 5px solid #ff66b2;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
             padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0px 0px 15px rgba(255, 102, 178, 0.5);
-            backdrop-filter: blur(8px);
-        }
-
-        .bottom-right-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, #ff66b2, #ffccff);
-            color: white;
-            border: none;
-            padding: 18px 30px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            box-shadow: 0px 0px 12px rgba(255, 102, 178, 0.7);
-        }
-
-        .bottom-right-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 20px rgba(255, 102, 178, 1);
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 350px;
         }
 
         .update-log {
-            position: fixed;
-            top: 10px;
+            position: absolute;
+            top: 15px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 102, 178, 0.8);
+            background: rgba(255, 255, 255, 0.2);
             padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-weight: 600;
             color: white;
-            box-shadow: 0px 0px 10px rgba(255, 102, 178, 0.7);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
             animation: pulse 1.5s infinite alternate;
         }
 
@@ -82,74 +60,128 @@
             0% { transform: translateX(-50%) scale(1); }
             100% { transform: translateX(-50%) scale(1.05); }
         }
-
+        
         #gsearchbar {
-            outline: none;
             width: 100%;
-            font-size: 18px;
-            border: 3px solid #ff66b2;
             padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.9);
-            color: #333;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        #gsearchbar::placeholder {
+            color: #ddd;
         }
 
         #gsearchbar:focus {
-            background-color: rgba(255, 255, 255, 1);
-            border-color: #ff99cc;
-            box-shadow: 0px 0px 10px rgba(255, 102, 178, 0.7);
+            background: rgba(255, 255, 255, 0.3);
         }
 
         #glist {
-            border: 5px solid #ff66b2;
-            padding: 15px;
-            border-radius: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0px 0px 12px rgba(255, 102, 178, 0.7);
+            margin-top: 20px;
         }
 
         #glist h2 {
-            color: #ff66b2;
-            font-weight: bold;
+            font-size: 20px;
             margin-bottom: 15px;
         }
 
         #glist a {
             display: block;
-            text-decoration: none;
-            color: #333;
-            font-size: 18px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 8px 0;
             padding: 12px;
-            border-radius: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
             font-weight: bold;
-            margin-bottom: 10px;
-            transition: all 0.3s ease-in-out;
-            background: linear-gradient(45deg, #ff99cc, #ffccff);
-            text-align: center;
-            box-shadow: 0px 0px 8px rgba(255, 102, 178, 0.5);
+            transition: 0.3s;
         }
 
         #glist a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .bottom-right-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .bottom-right-button:hover {
+            background: rgba(255, 255, 255, 0.3);
             transform: scale(1.1);
-            box-shadow: 0px 0px 15px rgba(255, 102, 178, 1);
         }
     </style>
 </head>
 <body>
-    <button class="bottom-right-button" onclick="blank()">about:blank cloak</button>
-    <div class="update-log">Update Log: New Features Added!</div>
+    <div class="update-log">Update Log: UI Overhaul Completed!</div>
     <div class="container">
-        <div class="box">
-            <input type="text" id="gsearchbar" placeholder="Search" />
-            <div id="glist">
-                <h2>Low Taper Games</h2>
-                <a href="#">Game 1</a>
-                <a href="#">Game 2</a>
-                <a href="#">Game 3</a>
-            </div>
+        <input type="text" id="gsearchbar" placeholder="Search Games">
+        <div id="glist">
+            <h2>Low Taper Games</h2>
+           <a href="./gfiles/html5/cookieclicker/">Cookie Clicker</a>
+<a href="./gfiles/html5/flappybird/">Flappy Bird</a>
+<a href="./eagle">Minecraft 1.9</a>
+<a href="./Multiplayer/">Minecraft With Servers</a>
+<a href="./gfiles/html5/minecraft/">Very Old Minecraft</a>
+<a href="./gfiles/html5/geometrydash/">Geometry Dash</a>
+<a href="./gfiles/html5/q1k3/">Q1K3 (Fps)</a>
+<a href="./gfiles/html5/2048/">2048</a>
+<a href="./gfiles/html5/retrohaunt/">Retrohaunt</a>
+<a href="./gfiles/html5/tetris/">Tetris</a>
+<a href="./gfiles/html5/chromedino/">Chrome Dino</a>
+<a href="./gfiles/html5/snake/">Google Snake</a>
+<a href="./gfiles/html5/chess/">Chess Vs Robot</a>
+<a href="./gfiles/html5/pacman/">Pac-Man</a>
+<a href="./gfiles/html5/particleclicker/">Particle Clicker</a>
+<a href="./gfiles/html5/chromaincident/">Chroma Incident</a>
+<a href="./gfiles/html5/radiusraid/">Radius Raid</a>
+<a href="./gfiles/html5/hextris/">Hextris</a>
+<a href="./gfiles/html5/underrun/">Underrun</a>
+<a href="./gfiles/html5/astray/">Astray</a>
+<a href="./gfiles/html5/bounceback/">Bounce Back</a>
+<a href="./gfiles/html5/captaincallisto/">Captain Callisto</a>
+<a href="./gfiles/html5/xx142-b2exe/">xx142-b2.exe</a>
+<a href="./gfiles/html5/backcountry/">Backcountry</a>
+<a href="./gfiles/html5/blackholesquare/">Black Hole Square</a>
+<a href="./gfiles/html5/bounceback/">Bounce Back</a>
+<a href="./gfiles/html5/breaklock/">Breaklock</a>
+<a href="./gfiles/html5/breakout/">Breakout</a>
+<a href="./gfiles/html5/connect3/">Connect 3</a>
+<a href="./gfiles/html5/edgenotfound/">Edge not Found</a>
+<a href="./gfiles/html5/evilglitch/">Evil Glitch</a>
+<a href="./gfiles/html5/factoryballsforever/">Factory Balls Forever</a>
+<a href="./gfiles/html5/konnekt/">Konnekt</a>
+<a href="./gfiles/html5/ninjavsevilcorp/">Ninja vs Evilcorp</a>
+<a href="./gfiles/html5/trimps/">Trimps</a>
+<a href="./gfiles/html5/packabunchas/">Packabunchas</a>
+<a href="./gfiles/html5/pushback/">Push Back</a>
+<a href="./gfiles/html5/roadblocks/">Road Blocks</a>
+<a href="./gfiles/html5/sleepingbeauty/">Sleeping Beauty</a>
+<a href="./gfiles/html5/spacecompany/">Space Company</a>
+<a href="./gfiles/html5/spacegarden/">Space Garden</a>
+<a href="./gfiles/html5/spacehuggers/">Space Huggers</a>
+<a href="./gfiles/html5/themazeofspacegoblins/">The Maze of Space Goblins</a>
+<a href="./gfiles/html5/towermaster/">Towermaster</a>
+<a href="./gfiles/html5/asciispace/">ASCII Space</a>
+<a href="./gfiles/html5/asteroids/">Asteroids</a>
         </div>
     </div>
+    <button class="bottom-right-button" onclick="blank()">Cloak Mode</button>
 </body>
 </html>
